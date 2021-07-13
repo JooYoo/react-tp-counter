@@ -10,11 +10,17 @@ const Counter = () => {
     });
   };
 
-  // TODO: decreaseCount
+  const decreaseCount = () => {
+    setCount((prev) => {
+      return prev - 1;
+    });
+  };
+
   return (
     <div>
       <h4>{count}</h4>
       <button onClick={increaseCount}>+</button>
+      <button onClick={decreaseCount}>-</button>
     </div>
   );
 };
