@@ -16,10 +16,15 @@ const Counter = () => {
     });
   };
 
+  const resetCount = () => {
+    setCount(initCount);
+  };
+
   return (
     <div>
       <h4>{count}</h4>
       <button onClick={increaseCount}>+</button>
+      <button onClick={resetCount}>0</button>
       <button onClick={decreaseCount}>-</button>
     </div>
   );
