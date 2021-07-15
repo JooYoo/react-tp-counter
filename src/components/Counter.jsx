@@ -4,15 +4,15 @@ const Counter = () => {
   const initCount = 0;
   const [count, setCount] = useState(initCount);
 
-  const increaseCount = () => {
+  const increaseCount = (num) => {
     setCount((prev) => {
-      return prev + 1;
+      return prev + num;
     });
   };
 
-  const decreaseCount = () => {
+  const decreaseCount = (num) => {
     setCount((prev) => {
-      return prev - 1;
+      return prev - num;
     });
   };
 
@@ -23,9 +23,12 @@ const Counter = () => {
   return (
     <div>
       <h4>{count}</h4>
-      <button onClick={increaseCount}>+</button>
+      <button onClick={() => increaseCount(1)}>+</button>
       <button onClick={resetCount}>0</button>
-      <button onClick={decreaseCount}>-</button>
+      <button onClick={() => decreaseCount(1)}>-</button>
+      <br />
+      <button onClick={() => increaseCount(10)}>+ 10</button>
+      <button onClick={() => decreaseCount(10)}>- 10</button>
     </div>
   );
 };
